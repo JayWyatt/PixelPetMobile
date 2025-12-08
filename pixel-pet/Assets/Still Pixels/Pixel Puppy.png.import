@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s0hbrjt73xqw"
-path="res://.godot/imported/Sample-InventorySlotsSet.png-268186092d92f8990c697722fa855967.ctex"
+uid="uid://dtoqeah6n1jck"
+path="res://.godot/imported/Pixel Puppy.png-c5f082e8ef71d0e9aa85f1a74eb2e98d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Panels/Sample-InventorySlotsSet.png"
-dest_files=["res://.godot/imported/Sample-InventorySlotsSet.png-268186092d92f8990c697722fa855967.ctex"]
+source_file="res://Assets/Still Pixels/Pixel Puppy.png"
+dest_files=["res://.godot/imported/Pixel Puppy.png-c5f082e8ef71d0e9aa85f1a74eb2e98d.ctex"]
 
 [params]
 

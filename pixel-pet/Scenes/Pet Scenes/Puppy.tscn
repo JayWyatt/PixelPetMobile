@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cenp4dt6ewa1h"]
+[gd_scene load_steps=11 format=3 uid="uid://cenp4dt6ewa1h"]
 
 [ext_resource type="Texture2D" uid="uid://duhlcuqd28v3v" path="res://Assets/Sprite/PuppyIdeSpriteSheet.png" id="1_llq3g"]
+[ext_resource type="Script" uid="uid://do0pg1uk7w1xy" path="res://Scripts/Pet Scripts/BasePet.gd" id="2_i2egf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2egf"]
 atlas = ExtResource("1_llq3g")
@@ -63,3 +64,4 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_uuo4s")
 autoplay = "default"
 frame_progress = 0.18115026
+script = ExtResource("2_i2egf")
