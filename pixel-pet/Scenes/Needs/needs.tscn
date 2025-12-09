@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://wnf1nmurgr6m"]
+[gd_scene load_steps=10 format=3 uid="uid://wnf1nmurgr6m"]
 
 [ext_resource type="Script" uid="uid://dnchj5p5oh5xt" path="res://Scripts/Needs/Needs.gd" id="1_ssouu"]
 [ext_resource type="Texture2D" uid="uid://bvrihtf4ra4x6" path="res://Assets/Panels/NeedsPanel.png" id="3_ssouu"]
+[ext_resource type="Texture2D" uid="uid://bfuef3gkh11uf" path="res://Assets/Panels/HungerBarOutside.png" id="3_tdikv"]
+[ext_resource type="Texture2D" uid="uid://dtk2vs82plsnp" path="res://Assets/Panels/HungerBarInside.png" id="4_oapvn"]
+[ext_resource type="Texture2D" uid="uid://ddx0474myq66i" path="res://Assets/Panels/ThirstBarOutside.png" id="5_17rne"]
+[ext_resource type="Texture2D" uid="uid://dm545hddrdkvn" path="res://Assets/Panels/ThirstBarInside.png" id="6_jdjrr"]
+[ext_resource type="Texture2D" uid="uid://c2bl2wtrmekb8" path="res://Assets/Panels/LoveBarOutside.png" id="7_17rne"]
+[ext_resource type="Texture2D" uid="uid://cm2e3mq7ktlhj" path="res://Assets/Panels/LoveBarInside.png" id="8_jdjrr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tdikv"]
 texture = ExtResource("3_ssouu")
@@ -23,40 +29,43 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ssouu")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_left = -3.0
-offset_top = 660.0
-offset_right = 357.0
-offset_bottom = 750.0
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 730.0
+offset_right = 350.0
+offset_bottom = 820.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_tdikv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+[node name="HungerBar" type="TextureProgressBar" parent="Panel"]
+custom_minimum_size = Vector2(220, 18)
 layout_mode = 0
-offset_right = 94.0
-offset_bottom = 77.0
-
-[node name="Hunger" type="HBoxContainer" parent="CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-
-[node name="HungerBar" type="TextureProgressBar" parent="CanvasLayer/Panel/VBoxContainer/Hunger"]
-custom_minimum_size = Vector2(220, 18)
-layout_mode = 2
+offset_left = 84.0
+offset_top = -37.0
+offset_right = 468.0
+offset_bottom = 59.0
 value = 100.0
+texture_under = ExtResource("3_tdikv")
+texture_progress = ExtResource("4_oapvn")
 
-[node name="Thirst" type="HBoxContainer" parent="CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-
-[node name="ThirstBar" type="TextureProgressBar" parent="CanvasLayer/Panel/VBoxContainer/Thirst"]
+[node name="ThirstBar" type="TextureProgressBar" parent="Panel"]
 custom_minimum_size = Vector2(220, 18)
-layout_mode = 2
+layout_mode = 0
+offset_left = 78.0
+offset_top = -3.0
+offset_right = 462.0
+offset_bottom = 93.0
 value = 100.0
+texture_under = ExtResource("5_17rne")
+texture_progress = ExtResource("6_jdjrr")
 
-[node name="Love" type="HBoxContainer" parent="CanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-
-[node name="LoveBar" type="TextureProgressBar" parent="CanvasLayer/Panel/VBoxContainer/Love"]
+[node name="LoveBar" type="TextureProgressBar" parent="Panel"]
 custom_minimum_size = Vector2(220, 18)
-layout_mode = 2
+layout_mode = 0
+offset_left = 60.0
+offset_top = 31.0
+offset_right = 444.0
+offset_bottom = 127.0
 value = 100.0
+texture_under = ExtResource("7_17rne")
+texture_progress = ExtResource("8_jdjrr")

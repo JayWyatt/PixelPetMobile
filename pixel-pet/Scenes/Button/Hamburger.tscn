@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://byq8goilaaipr"]
+[gd_scene load_steps=9 format=3 uid="uid://byq8goilaaipr"]
 
 [ext_resource type="Script" uid="uid://dwik7het443b4" path="res://Scripts/MenuButton.gd" id="1_t1vv3"]
 [ext_resource type="Texture2D" uid="uid://ck1q5ey2u6ghx" path="res://Assets/Still Pixels/Steak.png" id="2_np6qo"]
@@ -9,9 +9,6 @@
 [ext_resource type="Script" uid="uid://80rdw8sk6xpu" path="res://Scripts/Drag & Drop/TreatIcon.gd" id="7_3i6nh"]
 [ext_resource type="Script" uid="uid://ct2vev5ilyjrn" path="res://Scripts/Drag & Drop/WaterIcon.gd" id="9_jrvdt"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kwt13"]
-load_path = "res://.godot/imported/SidePanel.png-fa630e1385b03f735e53e28d9da9c0c1.ctex"
-
 [node name="Hamburger" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -20,11 +17,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t1vv3")
-
-[node name="PinkSidePanel" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(318, 210)
-texture = SubResource("CompressedTexture2D_kwt13")
 
 [node name="MenuButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -35,7 +27,6 @@ offset_bottom = 80.0
 texture_normal = ExtResource("3_3i6nh")
 
 [node name="Food" type="TextureRect" parent="."]
-visible = false
 texture_filter = 1
 layout_mode = 0
 offset_left = 302.0
@@ -45,19 +36,7 @@ offset_bottom = 132.99998
 texture = ExtResource("2_np6qo")
 script = ExtResource("5_7eamf")
 
-[node name="Treat" type="TextureRect" parent="."]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 300.0
-offset_top = 199.0
-offset_right = 340.0
-offset_bottom = 239.0
-texture = ExtResource("4_b42fe")
-script = ExtResource("7_3i6nh")
-
 [node name="Drink" type="TextureRect" parent="."]
-visible = false
 texture_filter = 1
 layout_mode = 0
 offset_left = 300.0
@@ -66,5 +45,15 @@ offset_right = 340.0
 offset_bottom = 185.0
 texture = ExtResource("3_klego")
 script = ExtResource("9_jrvdt")
+
+[node name="Treat" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 300.0
+offset_top = 199.0
+offset_right = 340.0
+offset_bottom = 239.0
+texture = ExtResource("4_b42fe")
+script = ExtResource("7_3i6nh")
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

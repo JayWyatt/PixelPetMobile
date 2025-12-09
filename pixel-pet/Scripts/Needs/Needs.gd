@@ -3,9 +3,9 @@ class_name NeedsPanel
 
 @export var pet_path: NodePath
 
-@onready var hunger_bar: ProgressBar = $CanvasLayer/Panel/VBoxContainer/Hunger/HungerBar
-@onready var thirst_bar: ProgressBar = $CanvasLayer/Panel/VBoxContainer/Thirst/ThirstBar
-@onready var affection_bar: ProgressBar = $CanvasLayer/Panel/VBoxContainer/Affection/AffectionBar
+@onready var hunger_bar = $Panel/HungerBar
+@onready var thirst_bar = $Panel/ThirstBar
+@onready var love_bar = $Panel/LoveBar
 
 var pet: BasePet = null
 
@@ -22,4 +22,4 @@ func _process(_delta: float) -> void:
 
 	hunger_bar.value = pet.hunger
 	thirst_bar.value = pet.thirst
-	affection_bar.value = pet.happiness
+	love_bar.value = pet.love
