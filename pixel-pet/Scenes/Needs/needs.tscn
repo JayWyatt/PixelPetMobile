@@ -32,9 +32,9 @@ script = ExtResource("1_ssouu")
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = -10.0
-offset_top = 730.0
+offset_top = 736.0
 offset_right = 350.0
-offset_bottom = 820.0
+offset_bottom = 826.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_tdikv")
 
 [node name="HungerBar" type="TextureProgressBar" parent="Panel"]

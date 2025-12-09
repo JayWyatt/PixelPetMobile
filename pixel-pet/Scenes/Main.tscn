@@ -11,7 +11,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tkdr5"]
 
-[node name="Root" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="Background" type="Control" parent="."]
 layout_mode = 3
@@ -40,9 +40,9 @@ expand_mode = 1
 z_index = -1
 layout_mode = 0
 offset_left = 1.0
-offset_top = 568.0
+offset_top = 554.0
 offset_right = 361.0
-offset_bottom = 1208.0
+offset_bottom = 1194.0
 texture = ExtResource("2_tkdr5")
 
 [node name="Extended Wallpaper" type="TextureRect" parent="Background"]
