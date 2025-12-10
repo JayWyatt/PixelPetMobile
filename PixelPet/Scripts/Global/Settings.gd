@@ -7,6 +7,9 @@ var data := {
 	"master_volume": 1.0,
 	"music_volume": 1.0,
 	"sfx_volume": 1.0,
+
+	"music_muted": false, 
+	"sfx_muted": false,
 }
 
 func _ready():
@@ -37,10 +40,23 @@ func load_settings():
 		data[key] = cfg.get_value("audio", key, data[key])
 
 func apply_audio_settings():
-	_apply_bus("Master", data["master_volume"])
-	_apply_bus("Music", data["music_volume"])
-	_apply_bus("SFX", data["sfx_volume"])
+	_apply_bus("Master", data["master_volume"], false)
+	_apply_bus("Music", data["music_volume"], data["music_muted"])
+	_apply_bus("SFX", data["sfx_volume"], data["sfx_muted"])
 
-func _apply_bus(bus_name: String, value: float):
+func _apply_master():
+	var bus := AudioServer.get_bus_index("Master")
+	if data["master_muted"]:
+		AudioServer.set_bus_mute(bus, true)
+	else:
+		AudioServer.set_bus_mute(bus, false)
+		AudioServer.set_bus_volume_db(bus, linear_to_db(data["master_volume"]))
+
+func _apply_bus(bus_name: String, volume: float, muted: bool):
 	var bus := AudioServer.get_bus_index(bus_name)
-	AudioServer.set_bus_volume_db(bus, linear_to_db(value))
+
+	if muted:
+		AudioServer.set_bus_mute(bus, true)
+	else:
+		AudioServer.set_bus_mute(bus, false)
+		AudioServer.set_bus_volume_db(bus, linear_to_db(volume))
