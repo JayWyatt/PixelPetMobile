@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjx5bwa1l1sl"]
+
+[ext_resource type="Texture2D" uid="uid://wjbjwe7x8rsy" path="res://Assets/Backgrounds/Pixel Pet BackgroundV2.png" id="1_b3i5h"]
+[ext_resource type="Script" uid="uid://dj6j6e8l5qffs" path="res://Scripts/Main.gd" id="1_vy5pj"]
+[ext_resource type="PackedScene" uid="uid://byq8goilaaipr" path="res://Scenes/Button/Hamburger.tscn" id="2_kqog5"]
+[ext_resource type="Texture2D" uid="uid://ciqtiooqq7cy5" path="res://Assets/Backgrounds/Extender FlooringV2.png" id="2_tkdr5"]
+[ext_resource type="Texture2D" uid="uid://d3kyln8l0mmdn" path="res://Assets/Backgrounds/Extended WallpaperV2.png" id="3_0tf6y"]
+[ext_resource type="Texture2D" uid="uid://cauiucu3ntp6v" path="res://Assets/Still Pixels/Water Bowl.png" id="4_pl8e4"]
+[ext_resource type="PackedScene" uid="uid://wnf1nmurgr6m" path="res://Scenes/Needs/needs.tscn" id="7_is6ib"]
+[ext_resource type="PackedScene" uid="uid://bkv8el7cjfuay" path="res://Scenes/Pet Scenes/PuppyPet.tscn" id="9_vy5pj"]
+[ext_resource type="Texture2D" uid="uid://dugcfwlsouvnf" path="res://Assets/Still Pixels/Radio.png" id="10_bmxlf"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_vy5pj")
+default_pet_scene = ExtResource("9_vy5pj")
+
+[node name="Background" type="Control" parent="."]
+z_index = -2
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_top = 54.0
+offset_right = 39.0
+offset_bottom = 94.0
+mouse_filter = 2
+
+[node name="GameBackground" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 1.275
+anchor_right = 5.3510003
+anchor_bottom = 1.275
+offset_top = -97.0
+offset_right = 146.95999
+offset_bottom = 543.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_b3i5h")
+expand_mode = 1
+
+[node name="Extended Flooring" type="TextureRect" parent="Background"]
+z_index = -1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 554.0
+offset_right = 361.0
+offset_bottom = 1194.0
+texture = ExtResource("2_tkdr5")
+
+[node name="Extended Wallpaper" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -653.0
+offset_right = 361.0
+offset_bottom = -13.0
+texture = ExtResource("3_0tf6y")
+flip_h = true
+
+[node name="WaterBowl" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 299.0
+offset_right = 45.0
+offset_bottom = 339.0
+texture = ExtResource("4_pl8e4")
+
+[node name="Hamburger" parent="." instance=ExtResource("2_kqog5")]
+offset_left = -1.0
+offset_top = 11.0
+offset_right = -1.0
+offset_bottom = 11.0
+
+[node name="Needs" parent="." instance=ExtResource("7_is6ib")]
+offset_left = 6.0
+offset_top = -75.0
+offset_right = 6.0
+offset_bottom = -75.0
+mouse_filter = 2
+
+[node name="BasePetSpawn" type="Marker2D" parent="."]
+position = Vector2(171, 427)
+
+[node name="Radio" type="TextureButton" parent="."]
+offset_left = 287.0
+offset_top = 149.0
+offset_right = 351.0
+offset_bottom = 213.0
+texture_normal = ExtResource("10_bmxlf")
+
+[connection signal="pressed" from="Radio" to="." method="_on_radio_pressed"]
